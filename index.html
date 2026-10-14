@@ -1,7 +1,15 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<!-- GOOGLE ANALYTICS AQUÍ -->
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3WV9M2Q3P1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-3WV9M2Q3P1');
+</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Come mejor y junta más millas</title>
@@ -342,4 +350,15 @@
 })();
 </script>
 </body>
+  <script>
+  // Envía el evento clic_cta_principal cuando el visitante hace clic en el CTA
+  document.querySelectorAll('#cta-principal, .cta-principal').forEach(function (boton) {
+    boton.addEventListener('click', function () {
+      var seccion = boton.closest('section');
+      gtag('event', 'clic_cta_principal', {
+        ubicacion: seccion && seccion.id ? seccion.id : 'sin_seccion'
+      });
+    });
+  });
+</script>
 </html>
